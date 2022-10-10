@@ -1,0 +1,27 @@
+.app{
+    height: 100vh;
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+.pyramid{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.items{
+    display: flex;
+    flex-direction: column;
+}
+
+.item{
+    padding-top: 10px ;
+}
+
+.main{
+   
+    width: 75%;
+}
