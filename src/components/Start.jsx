@@ -1,7 +1,12 @@
-import React, { useRef } from 'react'
-
+import React, { useRef, useEffect } from 'react'
+import {init} from 'ityped';
 export default function Start({setUsername}) {
     const inputRef = useRef();
+    const titleRef = useRef();
+    useEffect(() =>{
+      console.log(titleRef.current)
+      init(titleRef.current, { showCursor: true, strings: ['Test your trivia skills!', 'Win up to 1 million!', 'Have fun and good luck!' ], })
+    },[])
     const handleClick = () =>{
        inputRef.current.value &&  setUsername(inputRef.current.value)
     }
@@ -13,7 +18,7 @@ export default function Start({setUsername}) {
     };
   return (
    <>
-       <h1 className='rainbowtitle'>Welcome to Trivia and good luck!</h1>
+       <h1 className='rainbowtitle'><span ref={titleRef}></span></h1>
        <div className='start'>
         <input placeholder='Enter username..' className="startInput" ref={inputRef} onKeyDown={handleKeypress}/>
         <button className='startbutton' onClick={handleClick}>Start</button>

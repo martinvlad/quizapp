@@ -217,3 +217,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .ityped-cursor {
+    background: linear-gradient(to right, #ef5350, #f48fb1, #ef5350, #2196f3, #26c6da, #eeff41, #eeff41, #f9a825, #ff5722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50%{
+    opacity: 1;
+  }
+  
+  100%{
+    opacity: 0;
+  }
+  
+}
