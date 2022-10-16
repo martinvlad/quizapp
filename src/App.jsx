@@ -371,11 +371,18 @@ const pyramidValues = useMemo(() =>
    
 
   },[pyramidValues,questionNumber])
+
+  const handleRestart = () =>{
+    setStop(false);
+    setUsername(null);
+    setquestionNumber(1);
+  }
   return (<div className="app">
     {username ? (<> <div className="main">
-      {stop ? <h1 className='earned'>{questionNumber > 15 ? <h3 className='rainbow'>{earned}</h3> : 
+      {stop ? <h1 className='earned'>{questionNumber > 15 ? <><h3 className='rainbow'>{earned}</h3></> : 
       <div>
       <h3 className="rainbow">You earned {earned}, valiant effort {username}!</h3>
+      <button className='buttonrestart' onClick={() => handleRestart()}>Try again?</button>
       </div>
       }</h1> : (
       <>
